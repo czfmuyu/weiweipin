@@ -1,0 +1,23 @@
+<view class="container">
+    <scroll-view class="scroll1" scrollY="true" style="height:{{windowHeight}}px;top:{{search_top}}px;">
+        <view bindtap="selectMenu" class="{{activeIndex1==index?'itemon':'none'}}" data-item-index="{{index}}" wx:for="{{many_city}}" wx:key="*this">{{item.name}}</view>
+    </scroll-view>
+    <scroll-view class="scroll2" scrollIntoView="{{toView}}" scrollY="true" style="height:{{windowHeight}}px;top:{{search_top}}px;">
+        <view bindtap="xzcs" class="choosecity">
+            <view>选择此城市</view>
+            <image src="../image/address3.png"></image>
+        </view>
+        <view bindtap="selectMenu_city" class="{{activeIndex2==index?'xz':'city_title'}}" data-item-index="{{index}}" wx:for="{{province_city}}">
+      {{item.name}}
+    </view>
+    </scroll-view>
+    <scroll-view class="scroll3" scrollIntoView="{{toView}}" scrollY="true" style="height:{{windowHeight}}px;top:{{search_top}}px;">
+        <view bindtap="xzqx" class="choosecity">
+            <view>选择此区县</view>
+            <image src="../image/address3.png"></image>
+        </view>
+        <view bindtap="selectMenu_area" class="{{activeIndex3==index?'xz':'city_title'}}" data-item-index="{{index}}" wx:for="{{province_area}}">
+      {{item}}
+    </view>
+    </scroll-view>
+</view>
